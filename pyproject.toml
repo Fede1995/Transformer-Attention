@@ -1,40 +1,50 @@
 [build-system]
-requires = ["setuptools>=59.5.0", "wheel"]
+requires = ["setuptools>=59.5.0", "setuptools-scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "transformer-attention"
+name = "transformer-attention" # name on PyPI
 version = "1.0.0"
 authors = [
     {name = "Federico Figari Tomenotti"},
 ]
-description = "My package description"
-readme = "README.md"
-requires-python = ">=3.8"
-keywords = ["one", "two"]
-dependencies = [
-    "requests",
-    'importlib-metadata; python_version<"3.10"',
+maintainers = [
+  {name = "Federico Figari Tomenotti"},
 ]
-dynamic = ["version"]
+description = "Useful patch to expose flags to extract attention weighs from Torch Transformers"
+readme = "README.md"
+keywords = ["transformers", "torch", "machine learning", "attention", "self-attention", "multi-head attention"]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "Environment :: GPU :: NVIDIA CUDA",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Visualization"
+
 ]
 requires-python = ">=3.8"
 dependencies = [
-"torch>=2.0.0+cu118",
+#"torch>=2.0.0",
 ]
 
 [project.scripts]
-my-script = "transformer_attention.transformer" # :function
+my-script = "transformer_attention.transformer:main" # :function
 
-[tool.setuptools]
-packages = ["transformer_attention"]
+#[tool.setuptools]
+#packages = ["transformer_attention"]
 
-#[tool.setuptools.packages.find]
-#where = ["src"]
-#include = ["transformer_attention"]
+
+[project.urls]
+Homepage = "https://github.com/Fede1995/Transformer-Attention"
+Documentation = "https://github.com/Fede1995/Transformer-Attention"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["transformer_attention"]
 #namespaces = false
