@@ -46,5 +46,5 @@ Documentation = "https://github.com/Fede1995/Transformer-Attention"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["transformer_attention"]
+#include = ["transformer_attention"]
 #namespaces = false

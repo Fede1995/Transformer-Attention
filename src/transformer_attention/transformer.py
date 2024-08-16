@@ -188,7 +188,7 @@ if __name__=='__main__':
     print(f'out shape')
     print(out.shape)
     print(f'ENCODER layer 0, self attention shape')
-    print(transformer_model.encoder.layers[0].attention_weights.shape)  # 32,10,10
+    print(transformer_model.encoder.layers[0].attention_weights.shape)  # 32, 1,10,10
     # or with average_attn_weights=False -> 32,8,10,10
     # 32 batch
     print(f'DECODER layer 0, self attention shape')
